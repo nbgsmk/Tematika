@@ -11,7 +11,7 @@
 		android:layout_height="wrap_content"
 		android:theme="@style/Theme.Tematika.AppBarOverlay">
 
-		<androidx.appcompat.widget.Toolbar
+		<com.google.android.material.appbar.MaterialToolbar
 			android:id="@+id/toolbar"
 			android:layout_width="match_parent"
 			android:layout_height="?attr/actionBarSize"
@@ -29,6 +29,6 @@
 		android:layout_marginBottom="16dp"
 		app:srcCompat="@android:drawable/ic_dialog_email" />
 
-	<include layout="@layout/content_main" />
+	<include layout="@layout/app_nav_host" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
