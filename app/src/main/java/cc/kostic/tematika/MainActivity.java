@@ -17,18 +17,18 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
-import cc.kostic.tematika.databinding.ActivityMainBinding;
+import cc.kostic.tematika.databinding.AppBinding;
 
 public class MainActivity extends AppCompatActivity {
 
 	private AppBarConfiguration mAppBarConfiguration;
-	private ActivityMainBinding binding;
+	private AppBinding binding;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		binding = ActivityMainBinding.inflate(getLayoutInflater());
+		binding = AppBinding.inflate(getLayoutInflater());
 		setContentView(binding.getRoot());
 
 		setSupportActionBar(binding.appBarMain.toolbar);
