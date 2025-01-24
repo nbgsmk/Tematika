@@ -20,17 +20,34 @@
 		android:textSize="20sp"
 		/>
 
-	<Button
+	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:id="@+id/b_dialog_msg"
-		android:text="Material Dialog setMessage"
+		android:text="MaterialDialog with:"
 		/>
 
 	<Button
+		android:id="@+id/b_dialog_setmessage"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:id="@+id/b_dialog_view"
-		android:text="Material Dialog setView"
+		android:text="set Message"
 		/>
+
+
+	<Button
+		android:id="@+id/b_dialog_singlechoice"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="set SingleChoice Items"
+		/>
+
+
+	<Button
+		android:id="@+id/b_dialog_setview"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="set View"
+		/>
+
+
 </LinearLayout>

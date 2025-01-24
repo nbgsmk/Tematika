@@ -25,23 +25,31 @@ public class HomeFragment extends Fragment {
 		final TextView textView = binding.textHome;
 		homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
-		binding.bDialogMsg.setOnClickListener(new View.OnClickListener() {
+		binding.bDialogSetmessage.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Material_Dlg_setMsg dlg = Material_Dlg_setMsg.newInstance(44);
-				dlg.show(getChildFragmentManager(), "Material_Dlg_msg");
-
+				MaterialDialog_singleChoice dlg = MaterialDialog_singleChoice.newInstance(1, "levo desno");
+				dlg.show(getChildFragmentManager(), "MaterialDialog_setMsg");
 			}
 		});
 
-		binding.bDialogView.setOnClickListener(new View.OnClickListener() {
+		binding.bDialogSinglechoice.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Material_Dlg_setView dlg = Material_Dlg_setView.newInstance(44);
-				dlg.show(getChildFragmentManager(), "Material_Dlg_view");
-
+				MaterialDialog_singleChoice dlg = MaterialDialog_singleChoice.newInstance(2, "levo desno");
+				dlg.show(getChildFragmentManager(), "MaterialDialog_singleChoice");
 			}
 		});
+
+		binding.bDialogSetview.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				MaterialDialog_setView dlg = MaterialDialog_setView.newInstance(44, "levo desno tekst");
+				dlg.show(getChildFragmentManager(), "MaterialDialog_setView");
+			}
+		});
+
+
 		return root;
 	}
 
