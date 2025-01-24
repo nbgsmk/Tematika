@@ -28,7 +28,7 @@ public class HomeFragment extends Fragment {
 		binding.bDialogSetmessage.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				MaterialDialog_singleChoice dlg = MaterialDialog_singleChoice.newInstance(1, "levo desno");
+				MaterialDlg dlg = MaterialDlg.newInstance(1, "levo desno");
 				dlg.show(getChildFragmentManager(), "MaterialDialog_setMsg");
 			}
 		});
@@ -36,16 +36,16 @@ public class HomeFragment extends Fragment {
 		binding.bDialogSinglechoice.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				MaterialDialog_singleChoice dlg = MaterialDialog_singleChoice.newInstance(2, "levo desno");
-				dlg.show(getChildFragmentManager(), "MaterialDialog_singleChoice");
+				MaterialDlg dlg = MaterialDlg.newInstance(2, "levo desno");
+				dlg.show(getChildFragmentManager(), "MaterialDlg");
 			}
 		});
 
 		binding.bDialogSetview.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				MaterialDialog_setView dlg = MaterialDialog_setView.newInstance(44, "levo desno tekst");
-				dlg.show(getChildFragmentManager(), "MaterialDialog_setView");
+				MaterialDlg_setView dlg = MaterialDlg_setView.newInstance(44, "levo desno tekst");
+				dlg.show(getChildFragmentManager(), "MaterialDlg_setView");
 			}
 		});
 

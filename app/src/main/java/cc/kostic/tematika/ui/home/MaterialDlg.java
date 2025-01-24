@@ -6,47 +6,48 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-import cc.kostic.tematika.databinding.MaterialDialogSetViewBinding;
 
-
-public class MaterialDialog_setView extends DialogFragment {
+public class MaterialDlg extends DialogFragment {
 	private final String TAG = "TAG " + getClass().getSimpleName();
 
 	// to call this dialog:
-	// MaterialDialog_setView dlg = MaterialDialog_setView.newInstance(1, "bla");
+	// MaterialDlg_setView dlg = MaterialDlg_setView.newInstance(1, "bla");
 	// dlg.show(getChildFragmentManager(), "MDb_tag");
 
-
-	// TODO: Rename arguments
-	private int id;
-	public static final String arg_ID = "argID_bk";
+	private int choice;
+	public static final String arg_Choice = "argCHOICE";
 
 	private String txt;
-	public static final String arg_Txt = "argTxt_bk";
+	public static final String arg_Txt = "argTXT";
 
-	MaterialDialogSetViewBinding binding;
-	MaterialDialogModel model;
+	private MyData_model model;
+	private String[] itemList = new String[]{"x", "y", "z", "t", "a", "b", "c"};
+	private final String loremIpsum = "What is Lorem Ipsum?\n" +
+			"\n" +
+			"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n" +
+			"\n" +
+			"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n";
+
+
 
 	/**
 	 * Factory method to create a new instance of this fragment
 	 *
-	 * @return A new instance of fragment MaterialDialog_setView.
+	 * @return A new instance of fragment MaterialDlg_setView.
 	 * @args Argumenti iz pozivajuceg Activity ili Fragment
 	 */
-	public static MaterialDialog_setView newInstance(int id, String txt) {
-		MaterialDialog_setView fragment = new MaterialDialog_setView();
+	public static MaterialDlg newInstance(int choice, String txt) {
+		MaterialDlg fragment = new MaterialDlg();
 		Bundle args = new Bundle();
-		args.putInt(arg_ID, id);
+		args.putInt(arg_Choice, choice);
 		args.putString(arg_Txt, txt);
 		fragment.setArguments(args);
 		return fragment;
@@ -59,15 +60,15 @@ public class MaterialDialog_setView extends DialogFragment {
 
 		Bundle args = getArguments();
 		if (args != null) {
-			id = args.getInt(arg_ID);
+			choice = args.getInt(arg_Choice);
 			txt = args.getString(arg_Txt);
 		}
 
 		// redosled:
 		// onCreate -> onCreateDialog -> onCreateView
 		// model ce biti raspoloziv u onCreateDialog
-		MaterialDialogModel.Factory factory = new MaterialDialogModel.Factory(requireActivity().getApplication(), id, txt);
-		model = new ViewModelProvider(requireParentFragment(), factory).get(MaterialDialogModel.class);
+		MyData_model.Factory factory = new MyData_model.Factory(requireActivity().getApplication(), choice, txt);
+		model = new ViewModelProvider(requireParentFragment(), factory).get(MyData_model.class);
 
 	}
 
@@ -80,12 +81,8 @@ public class MaterialDialog_setView extends DialogFragment {
 	@Nullable
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		// LifecycleOwner vlo = getViewLifecycleOwner();
-		// model.get __SOMETHING__.observe(vlo ...
 
-		// binding...set
-		return binding.getRoot();
-		// return super.onCreateView(inflater, container, savedInstanceState);
+		return super.onCreateView(inflater, container, savedInstanceState);
 	}
 
 
@@ -94,44 +91,24 @@ public class MaterialDialog_setView extends DialogFragment {
 	public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
 		// return super.onCreateDialog(savedInstanceState);
 
-		binding = MaterialDialogSetViewBinding.inflate(getLayoutInflater(), null, false);
-
-		// owner -> THIS je klucno!!
-		model.getId().observe(this, new Observer<Integer>() {
-			@Override
-			public void onChanged(Integer i) {
-				String s = "No# " + i + "\n";
-				s += "Obavezno staviti ceo layout unutar <ScrollView> \n da bi sprecio probleme sa \n positive i negative dugmicima \n u landscape modu";
-				binding.tvDlg.setText(s);
-			}
-		});
-
-		model.getTxt().observe(this, new Observer<String>() {
-			@Override
-			public void onChanged(String s) {
-				binding.etDlg.setText(s);
-			}
-		});
-
-
-		binding.bDlg.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Toast.makeText(binding.bDlg.getContext(), "Hop!", Toast.LENGTH_SHORT).show();
-			}
-		});
-
 		// iz top level activity
 		// MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);      // this je context
 		// iz fragmenta
 		MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(requireContext());
-		builder.setTitle("Naslov " + id);
-		// SET MESSAGE XOR SET VIEW
-		if (1 == 2) {
-			builder.setMessage("message");
-		} else {
-			builder.setView(binding.getRoot());
+		builder.setTitle("Naslov " + choice);
+		if (choice == 1) {
+			builder.setMessage(loremIpsum);
 		}
+		if (choice == 2) {
+			builder.setSingleChoiceItems(itemList, 1, new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// nista
+				}
+			});
+		}
+
+
 		builder.setPositiveButton(getString(android.R.string.ok), new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialogInterface, int i) {
@@ -161,7 +138,6 @@ public class MaterialDialog_setView extends DialogFragment {
 	@Override
 	public void onDestroyView() {
 		super.onDestroyView();
-		binding = null;
 	}
 
 

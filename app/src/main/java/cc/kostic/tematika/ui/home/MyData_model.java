@@ -9,12 +9,11 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 
-public class MaterialDialogModel extends AndroidViewModel {
+public class MyData_model extends AndroidViewModel {
 
 	private final Application application;
 
@@ -23,7 +22,7 @@ public class MaterialDialogModel extends AndroidViewModel {
 
 	private final MutableLiveData<List<String>> list = new MutableLiveData<>();
 
-	public MaterialDialogModel(@NonNull Application application, int id, String txt) {
+	public MyData_model(@NonNull Application application, int id, String txt) {
 		super(application);
 		this.application = application;
 		this.id.postValue(id);
@@ -69,7 +68,7 @@ public class MaterialDialogModel extends AndroidViewModel {
 		@NonNull
 		@Override
 		public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-			return (T) new MaterialDialogModel(application, id, txt);
+			return (T) new MyData_model(application, id, txt);
 		}
 	}
 }
