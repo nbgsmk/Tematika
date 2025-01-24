@@ -18,7 +18,7 @@
 		android:layout_marginEnd="8dp"
 		android:textAlignment="center"
 		android:textSize="20sp"
-		/>
+		tools:text="textView iz modela" />
 
 	<TextView
 		android:layout_width="wrap_content"
@@ -49,5 +49,30 @@
 		android:text="set View"
 		/>
 
+	<androidx.cardview.widget.CardView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/cv_card"
+		>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:gravity="center"
+			>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="cardView sa tekstom i dugmetom"
+				/>
+			<com.google.android.material.button.MaterialButton
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="dugmence"
+				/>
+
+		</LinearLayout>
+	</androidx.cardview.widget.CardView>
 
 </LinearLayout>
