@@ -3,21 +3,21 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto">
 
 	<item
-		android:id="@+id/action__toast"
+		android:id="@+id/menu_app__toast"
 		android:title="Toast"
 		app:showAsAction="always"
 		/>
 
 	<item
-		android:id="@+id/action__ikonica"
+		android:id="@+id/menu_app__ikonica"
 		android:title="ikonica"
 		android:icon="@drawable/twotone_display_settings_24"
 		app:showAsAction="always"
 		/>
 
 	<item
-		android:id="@+id/action__overflow"
-		android:title="overflow example - activity"
+		android:id="@+id/menu_app__overflow"
+		android:title="overflow - activity"
 		android:icon="@drawable/twotone_delete_24"
 		app:showAsAction="never"
 		/>

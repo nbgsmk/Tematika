@@ -4,8 +4,14 @@
 
 
 	<item
-		android:id="@+id/menu_appBar__actionMode"
-		android:title="frag - start Action mode"
+		android:id="@+id/menu_homefrag__actionMode"
+		android:title="Actn_Mode"
+		app:showAsAction="always"
+		/>
+
+	<item
+		android:id="@+id/menu_homefrag__overflow"
+		android:title="Overflow - fragment"
 		app:showAsAction="never"
 		/>
 

@@ -1,7 +1,6 @@
 package cc.kostic.tematika;
 
 import android.os.Bundle;
-import android.view.ActionMode;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
@@ -11,6 +10,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.Lifecycle;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -62,7 +62,7 @@ public class App extends AppCompatActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.menu__app, menu);
 		return true;
 	}
 
@@ -71,8 +71,16 @@ public class App extends AppCompatActivity {
 		super.onOptionsItemSelected(item);
 		int id = item.getItemId();
 
-		if (id == R.id.action__toast) {
-			Toast.makeText(getApplicationContext(), "Toaster", Toast.LENGTH_LONG).show();
+		if (id == R.id.menu_app__toast) {
+			Toast.makeText(getApplicationContext(), "Toast", Toast.LENGTH_LONG).show();
+			return true;
+		}
+		if (id == R.id.menu_app__ikonica) {
+			Toast.makeText(getApplicationContext(), "Ikonica", Toast.LENGTH_LONG).show();
+			return true;
+		}
+		if (id == R.id.menu_app__overflow) {
+			Toast.makeText(getApplicationContext(), "Overflow - activity", Toast.LENGTH_LONG).show();
 			return true;
 		}
 

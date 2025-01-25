@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -101,17 +102,21 @@ public class HomeFragment extends Fragment {
 	private final MenuProvider menu_AppBar_Normal = new MenuProvider() {
 		@Override
 		public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
-			menuInflater.inflate(R.menu.menu_appbar__normal, menu);
+			menuInflater.inflate(R.menu.menu__home__normal, menu);
 		}
 
 		@Override
 		public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
 			int itemId = menuItem.getItemId();
-			if (itemId == R.id.menu_appBar__actionMode) {
+			if (itemId == R.id.menu_homefrag__actionMode) {
 				actionMode = requireActivity().startActionMode(menu_AppBar__actionMode, ActionMode.TYPE_PRIMARY);
 				return true;
 			}
-			
+			if (itemId == R.id.menu_homefrag__overflow) {
+				Toast.makeText(getContext(), "Overflow - fragment", Toast.LENGTH_LONG).show();
+				return true;
+			}
+
 			return false;
 		}
 
@@ -136,7 +141,7 @@ public class HomeFragment extends Fragment {
 
 		@Override
 		public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-			actionMode.getMenuInflater().inflate(R.menu.menu_appbar__actionmode, menu);
+			actionMode.getMenuInflater().inflate(R.menu.menu__home__actionmode, menu);
 			actionMode.setTitle("Naslov");
 			actionMode.setSubtitle("subtitle");
 			return true;
