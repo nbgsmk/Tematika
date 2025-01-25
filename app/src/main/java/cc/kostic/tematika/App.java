@@ -1,6 +1,7 @@
 package cc.kostic.tematika;
 
 import android.os.Bundle;
+import android.view.ActionMode;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
@@ -19,7 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import cc.kostic.tematika.databinding.AppBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class App extends AppCompatActivity {
 
 	private AppBarConfiguration mAppBarConfiguration;
 	private AppBinding binding;
@@ -36,14 +37,14 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View view) {
 				Snackbar.make(binding.getRoot(), "Искочица", Snackbar.LENGTH_INDEFINITE)
-						.setAction("Окет!", new View.OnClickListener() {
-							@Override
-							public void onClick(View v) {
-								// nephodan listener da bi se pokazalo dugme na shackbaru
-							}
-						})
-						.setAnchorView(R.id.fab)
-						.show();
+					.setAction("Окет!", new View.OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							// nephodan listener da bi se pokazalo dugme na shackbaru
+						}
+					})
+					.setAnchorView(R.id.fab)
+					.show();
 			}
 		});
 		DrawerLayout drawer = binding.drawerLayout;
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 		super.onOptionsItemSelected(item);
 		int id = item.getItemId();
 
-		if (id == R.id.action__txt) {
+		if (id == R.id.action__toast) {
 			Toast.makeText(getApplicationContext(), "Toaster", Toast.LENGTH_LONG).show();
 			return true;
 		}

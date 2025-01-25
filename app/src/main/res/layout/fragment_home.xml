@@ -87,9 +87,10 @@
 				android:text="cardView sa tekstom i dugmetom"
 				/>
 			<com.google.android.material.button.MaterialButton
+				android:id="@+id/b_actionMode"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="dugmence"
+				android:text="Menu ActionMode"
 				/>
 
 		</LinearLayout>

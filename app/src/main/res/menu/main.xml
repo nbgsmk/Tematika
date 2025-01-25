@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto">
+
 	<item
-		android:id="@+id/action__txt"
+		android:id="@+id/action__toast"
 		android:title="Toast"
 		app:showAsAction="always"
 		/>
 
 	<item
 		android:id="@+id/action__ikonica"
-		android:title="@string/action_settings"
+		android:title="ikonica"
 		android:icon="@drawable/twotone_display_settings_24"
 		app:showAsAction="always"
 		/>
 
 	<item
-		android:id="@+id/action__tri_tackice"
-		android:title="brisanje"
+		android:id="@+id/action__overflow"
+		android:title="overflow example - activity"
 		android:icon="@drawable/twotone_delete_24"
 		app:showAsAction="never"
 		/>
