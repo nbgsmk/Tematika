@@ -20,14 +20,17 @@
 
 	</com.google.android.material.appbar.AppBarLayout>
 
-	<com.google.android.material.floatingactionbutton.FloatingActionButton
+	<com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 		android:id="@+id/fab"
+		android:text="Ext. Fab"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_gravity="bottom|end"
 		android:layout_marginEnd="@dimen/fab_margin"
 		android:layout_marginBottom="16dp"
-		app:srcCompat="@android:drawable/ic_dialog_email" />
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:icon="@drawable/twotone_delete_24" />
 
 	<include layout="@layout/app_nav_host" />
 

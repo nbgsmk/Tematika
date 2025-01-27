@@ -5,7 +5,7 @@
 
 	<item
 		android:id="@+id/menu_homefrag__actionMode"
-		android:title="Actn_Mode"
+		android:title="Actn.Mde"
 		app:showAsAction="always"
 		/>
 

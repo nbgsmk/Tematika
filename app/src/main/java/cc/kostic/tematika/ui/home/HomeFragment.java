@@ -37,18 +37,6 @@ public class HomeFragment extends Fragment {
 		final TextView textView = binding.textHome;
 		homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
-		binding.bDay.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-			}
-		});
-		binding.bNight.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-			}
-		});
 		binding.bDialogSetmessage.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
