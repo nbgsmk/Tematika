@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+
+	<!-- +++++++++++++++++++ -->
+	<!-- PREFERENCE KEYS APP -->
+	<!-- +++++++++++++++++++ -->
+	<!--
+		NAZIVI PREFERENCE FAJLOVA I NOTA
+	-->
+
+	<string name="GLOB_PREFS_FILE_NAME">GLOB_PREFS_cc.kostic.hamclock</string>
+
+
+
+
+	<!-- +++++++++++++++++++ -->
+	<!-- CATEGORY GENERAL -->
+	<!-- +++++++++++++++++++ -->
+	<string name="pref_category_title">Preference category title</string>
+
+	<!--
+	CATEGORY GENERAL
+		COLOR THEME
+	-->
+	<!-- keys indirect -->
+	<string name="colorTheme_follow_system">follow-system</string>
+	<string name="colorTheme_dark">dark</string>
+	<string name="colorTheme_light">light</string>
+
+	<string name="pref__app_colorTheme__title">Color theme (stvarno)</string>
+	<string name="pref__app_colorTheme__default">@string/colorTheme_follow_system</string>
+	<!-- FULL FREEZE ! -->
+	<string name="pref__app_colorTheme__FREEZEkey">app_colorTheme</string>		<!-- FULL FREEZE ! -->
+	<string-array name="pref__app_colorTheme__tekstovi">
+		<item>System default</item>
+		<item>Dark</item>
+		<item>Light</item>
+	</string-array>
+	<string-array name="pref__app_colorTheme__vrednosti">
+		<item>@string/colorTheme_follow_system</item>
+		<item>@string/colorTheme_dark</item>
+		<item>@string/colorTheme_light</item>
+	</string-array>
+	<!-- full freeze end ! -->
+
+
+
+
+
+
+
+	<!--
+	CATEGORY GENERAL
+		ListPreference
+	-->
+	<string name="pref_cat_list__title">List Preference</string>
+	<!-- FULL FREEZE ! -->
+	<string name="pref_cat_list__FREEZEkey">pref_cat_list__Key</string>
+	<string-array name="pref_cat_list__tekstovi">
+		<item>+5 min</item>
+		<item>+10 min</item>
+		<item>Forever</item>
+	</string-array>
+	<string-array name="pref_cat_list__vrednosti">	<!-- FULL FREEZE!! DEBIL!! mora biti string-array! -->
+		<item>5</item>
+		<item>10</item>
+		<item>1000000</item>	<!--Milion minuta je 2 godine. Ako to nije dovoljno...-->
+	</string-array>
+	<!-- full freeze end ! -->
+
+
+	<!--
+	CATEGORY GENERAL
+		SeekBarPreference
+	-->
+	<string name="pref_cat_seek__FREEZEkey">screen_panels_visible</string>
+	<string name="pref_cat_seek__title">SeekBar</string>
+	<integer name="pref_cat_seek__default">3</integer>
+	<integer name="pref_cat_seek__min">2</integer>
+	<integer name="pref_cat_seek__max">6</integer>
+
+
+	<!--
+	CATEGORY GENERAL
+		SwitchPreference
+	-->
+	<string name="pref_cat_switch__FREEZEkey">pref_cat_switch_key</string>
+	<string name="pref_cat_switch__title">Switch Preference</string>
+	<string name="pref_cat_switch__sum_off">iskljuceno</string>
+	<string name="pref_cat_switch__sum_on">ukljuceno</string>
+
+
+	<!--
+	CATEGORY GENERAL
+		CheckBoxPreference
+	-->
+	<string name="pref_cat_check__FREEZEkey">pref_cat_check_key</string>
+	<string name="pref_cat_check__title">Switch Preference</string>
+	<string name="pref_cat_check__sum">hm</string>
+	<string name="pref_cat_check__sum_off">iskljuceno</string>
+	<string name="pref_cat_check__sum_on">ukljuceno</string>
+
+
+
+</resources>

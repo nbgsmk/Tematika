@@ -16,7 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-import cc.kostic.tematika.databinding.MaterialDialogSetViewBinding;
+import cc.kostic.tematika.databinding.MaterialDialogViewBinding;
 
 
 public class MaterialDlg_setView extends DialogFragment {
@@ -34,7 +34,7 @@ public class MaterialDlg_setView extends DialogFragment {
 	private String txt;
 	public static final String arg_Txt = "argTxt_bk";
 
-	MaterialDialogSetViewBinding binding;
+	MaterialDialogViewBinding binding;
 	MyData_model model;
 
 	/**
@@ -94,7 +94,7 @@ public class MaterialDlg_setView extends DialogFragment {
 	public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
 		// return super.onCreateDialog(savedInstanceState);
 
-		binding = MaterialDialogSetViewBinding.inflate(getLayoutInflater(), null, false);
+		binding = MaterialDialogViewBinding.inflate(getLayoutInflater(), null, false);
 
 		// owner -> THIS je klucno!!
 		model.getId().observe(this, new Observer<Integer>() {

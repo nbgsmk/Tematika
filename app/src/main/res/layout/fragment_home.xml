@@ -7,8 +7,8 @@
 	android:layout_height="match_parent"
 	android:orientation="vertical"
 	android:gravity="center"
-	tools:context=".ui.home.HomeFragment">
-
+	tools:context=".ui.home.HomeFragment"
+	>
 
 	<TextView
 		android:id="@+id/text_home"
@@ -19,27 +19,32 @@
 		android:layout_marginEnd="8dp"
 		android:textAlignment="center"
 		android:textSize="20sp"
-		tools:text="textView iz modela" />
+		tools:text="textView iz modela"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		/>
 
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="MaterialDialog with:"
+		android:text="MaterialDialogs:"
 		/>
 
 	<Button
 		android:id="@+id/b_dialog_setmessage"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="set Message"
+		android:text="Dialog -> setMessage"
 		/>
 
 
-	<Button
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/b_dialog_singlechoice"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="set SingleChoice Items"
+		android:text="Dialog -> SingleChoice Items"
 		/>
 
 
@@ -47,7 +52,7 @@
 		android:id="@+id/b_dialog_setview"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="set View"
+		android:text="Dialog -> custom view"
 		/>
 
 	<androidx.cardview.widget.CardView
@@ -65,7 +70,8 @@
 			<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="cardView sa tekstom i dugmetom"
+				android:textSize="24sp"
+				android:text="CardView sa dugmetom"
 				/>
 			<com.google.android.material.button.MaterialButton
 				android:id="@+id/b_actionMode"
@@ -73,8 +79,17 @@
 				android:layout_height="wrap_content"
 				android:text="Menu ActionMode"
 				/>
-
 		</LinearLayout>
+
 	</androidx.cardview.widget.CardView>
+
+
+	<TextClock
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textSize="44sp"
+		android:format12Hour="HH:mm:ss"
+		android:format24Hour="HH:mm:ss"
+		/>
 
 </LinearLayout>

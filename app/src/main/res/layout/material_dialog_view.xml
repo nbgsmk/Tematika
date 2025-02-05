@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".ui.home.HomeFragment">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:divider="@drawable/ic_menu_camera"
+		android:gravity="center"
+		android:orientation="vertical">
+
+		<TextView
+			android:id="@+id/tv_dlg"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:layout_marginTop="8dp"
+			android:layout_marginEnd="8dp"
+			android:textAlignment="center"
+			android:textSize="20sp" />
+
+		<EditText
+			android:id="@+id/et_dlg"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:autofillHints="emailAddress"
+			android:hint="edit text primer"
+			android:inputType="text"
+			android:selectAllOnFocus="true" />
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/b_dlg"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="(Material)Button" />
+
+		<SeekBar
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:progress="4"
+			android:max="12"
+			android:min="1" />
+
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:gravity="center"
+			>
+			<com.google.android.material.switchmaterial.SwitchMaterial
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:checked="true"
+				android:text="SwitchMaterial" />
+
+			<ToggleButton
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:checked="true"
+				android:textOn="da !"
+				/>
+
+			<CheckBox
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="start"
+				android:checked="true"
+				android:text="check me"
+				/>
+
+		</LinearLayout>
+
+
+	</LinearLayout>
+
+</ScrollView>

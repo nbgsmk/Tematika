@@ -42,6 +42,7 @@ dependencies {
 	implementation(libs.lifecycle.livedata.ktx)
 	implementation(libs.lifecycle.viewmodel.ktx)
 	implementation(libs.navigation.fragment)
+	implementation(libs.preference)
 	implementation(libs.navigation.ui)
 	implementation(libs.legacy.support.v4)
 	testImplementation(libs.junit)

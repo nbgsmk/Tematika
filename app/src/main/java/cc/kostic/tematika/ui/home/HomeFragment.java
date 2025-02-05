@@ -12,7 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.view.MenuHost;
 import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
@@ -25,7 +24,7 @@ import cc.kostic.tematika.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
 
-	ActionMode actionMode;
+	private ActionMode actionMode;
 	private FragmentHomeBinding binding;
 
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,6 +35,7 @@ public class HomeFragment extends Fragment {
 
 		final TextView textView = binding.textHome;
 		homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+
 
 		binding.bDialogSetmessage.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -72,12 +72,8 @@ public class HomeFragment extends Fragment {
 		MenuHost mh = requireActivity();
 		mh.addMenuProvider(menu_AppBar_Normal, vlo, Lifecycle.State.RESUMED);	// FREEZE! kreiranje/unistavanje menu kad se ode u drugi navigation drawer -> vidi kako se poziva konstruktor za ViewPagerAdapter
 
-
 		return root;
 	}
-
-
-
 
 
 
@@ -112,7 +108,7 @@ public class HomeFragment extends Fragment {
 		public void onPrepareMenu(@NonNull Menu menu) {
 			MenuProvider.super.onPrepareMenu(menu);
 		}
-		
+
 		@Override
 		public void onMenuClosed(@NonNull Menu menu) {
 			MenuProvider.super.onMenuClosed(menu);
@@ -152,7 +148,7 @@ public class HomeFragment extends Fragment {
 				actionMode.finish();
 				return true;
 			}
-			
+
 			return false;
 		}
 
@@ -163,7 +159,9 @@ public class HomeFragment extends Fragment {
 	};
 
 
-	
+
+
+
 	@Override
 	public void onDestroyView() {
 		super.onDestroyView();

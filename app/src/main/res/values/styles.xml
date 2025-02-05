@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="Theme.Tematika.NoActionBar">
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+	</style>
+
+
+	<!-- MAIN TOOLBAR -->
+	<style name="Theme.Tematika.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+		<!-- MaterialToolbar background NIGHT MODE ONLY -->
+		<!--<item name="colorSurface">?attr/colorPrimaryVariant</item>-->
+
+		<!-- overflow menu tri tackice -->
+		<!--<item name="tint">?attr/colorOnPrimary</item>-->
+
+		<!-- menu icon tint -->
+		<item name="iconTint">?attr/colorOnPrimary</item>
+
+		<!-- actionMode -> icon tint -->
+		<item name="android:iconTint">?attr/colorOnPrimary</item>
+
+		<!-- hamburger menu i overflow tackice -->
+		<!--<item name="colorControlNormal">@color/green</item>-->
+
+		<!-- HAMBURGER MENU - ovo pregazi colorControlNormal -->
+		<!--<item name="drawerArrowStyle">@style/DrawerArrowStyle</item>-->
+
+	</style>
+
+	<style name="Theme.Tematika.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light">
+
+	</style>
+
+
+
+
+
+
+	<!-- Customize your theme here. -->
+	<!-- Customize your theme here. -->
+	<!-- Customize your theme here. -->
+	<!-- Customize your theme here. -->
+
+
+
+	<!-- SNACKBAR COMMON -->
+	<style name="Widget.HC.Snackbar" parent="@style/Widget.MaterialComponents.Snackbar">
+		<!-- margina snackbar to parent -->
+		<!--<item name="android:layout_margin">24dp</item>-->
+		<!-- padding unutar snacka -->
+		<item name="android:padding">8dp</item>
+		<!-- fade ili slide -->
+		<!--<item name="animationMode">slide</item>-->
+		<!--pozadina tela snackbara-->
+		<!-- <item name="android:background">@color/purple_500</item> -->
+		<!-- overlay stilizuje boju layouta, teksta i dugmeta -->
+
+		<!-- preko podesavanja iznad, apliciraj jos i ovo -->
+		<item name="materialThemeOverlay">@style/ThemeOverlay.HC.Snackbar</item>
+	</style>
+
+	<!-- SNACKBAR OVERLAY ALI NEKI OD OSTALIH SETOVANJA MOGU DA GA PREGAZE  -->
+	<style name="ThemeOverlay.HC.Snackbar" parent="">
+		<!-- za telo snackbara prioritet je: colorOnSurface, njega pregazi android:backgroundTint -->
+		<item name="colorOnSurface">?attr/colorPrimary</item>
+		<!-- <item name="android:backgroundTint">@color/red_500</item> -->
+	</style>
+
+	<!-- SNACKBAR TEXT LABEL -->
+	<style name="hcSnackbarTextView" parent="Widget.MaterialComponents.Snackbar.TextView">
+		<!-- <item name="android:textColor">?attr/colorTertiary</item> -->
+		<!-- ruzan efekat pozadine teksta, a levo i desno od njega ostaje sasvim drugacija pozadina samog snackBara (vidi ThemeOverlay.HC.Snackbar) -->
+		<!-- <item name="android:background">@color/green</item> -->
+		<!--<item name="android:textAppearance">@style/TextAppearance.AppCompat.Title.Inverse</item>-->
+		<!--<item name="android:textStyle">italic</item>-->
+		<item name="android:textSize">18sp</item>
+		<!--<item name="android:paddingStart">16dp</item>-->
+	</style>
+
+	<!-- SNACKBAR BUTTON -->
+	<style name="Widget.HC.SnackbarButton" parent="Widget.MaterialComponents.Button.TextButton.Snackbar">
+		<!-- pozadina dugmeta -->
+		<!-- <item name="backgroundTint">?attr/colorPrimaryInverse</item> -->
+		<!-- boja teksta na dugmetu -->
+		<item name="android:textColor">?attr/colorPrimaryInverse</item>
+		<!-- velicina teksta -->
+		<item name="android:textSize">18sp</item>
+	</style>
+
+</resources>

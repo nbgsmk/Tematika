@@ -11,7 +11,6 @@ import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.lifecycle.Lifecycle;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -37,15 +36,16 @@ public class App extends AppCompatActivity {
 		binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
+				Toast.makeText(getApplicationContext(), "Toaster!", Toast.LENGTH_LONG).show();
 				Snackbar.make(binding.getRoot(), "Искочица", Snackbar.LENGTH_INDEFINITE)
-					.setAction("Окет!", new View.OnClickListener() {
-						@Override
-						public void onClick(View v) {
-							// nephodan listener da bi se pokazalo dugme na shackbaru
-						}
-					})
-					.setAnchorView(R.id.fab)
-					.show();
+						.setAction("Окет!", new View.OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								// nephodan listener da bi se pokazalo dugme na shackbaru
+							}
+						})
+						.setAnchorView(R.id.fab)
+						.show();
 			}
 		});
 		DrawerLayout drawer = binding.drawerLayout;
@@ -53,7 +53,11 @@ public class App extends AppCompatActivity {
 		// Passing each menu ID as a set of Ids because each
 		// menu should be considered as top level destinations.
 		mAppBarConfiguration = new AppBarConfiguration.Builder(
-				R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+				R.id.nav_home,
+				R.id.nav_gallery,
+				// R.id.nav_settings,
+				R.id.nav_slideshow
+		)
 				.setOpenableLayout(drawer)
 				.build();
 		NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -63,9 +67,12 @@ public class App extends AppCompatActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.menu__app, menu);
 		return true;
 	}
+
+
 
 	@Override
 	public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -89,6 +96,8 @@ public class App extends AppCompatActivity {
 
 		return false;
 	}
+
+
 
 	@Override
 	public boolean onSupportNavigateUp() {

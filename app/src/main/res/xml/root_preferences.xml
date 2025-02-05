@@ -1,0 +1,60 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<!-- +++++++++++++++++++ -->
+	<!-- CATEGORY GENERAL -->
+	<!-- +++++++++++++++++++ -->
+	<PreferenceCategory
+		app:title="@string/pref_category_title"
+		android:icon="@drawable/twotone_display_settings_24"
+		>
+
+
+		<ListPreference
+			app:title="@string/pref__app_colorTheme__title"
+			app:entries="@array/pref__app_colorTheme__tekstovi"
+			app:entryValues="@array/pref__app_colorTheme__vrednosti"
+			app:key="@string/pref__app_colorTheme__FREEZEkey"
+			app:defaultValue="@string/pref__app_colorTheme__default"
+			app:useSimpleSummaryProvider="true"
+			/>
+
+		<ListPreference
+			app:title="@string/pref_cat_list__title"
+			app:entries="@array/pref_cat_list__tekstovi"
+			app:entryValues="@array/pref_cat_list__vrednosti"
+			app:key="@string/pref_cat_list__FREEZEkey"
+			app:defaultValue="10"
+			app:useSimpleSummaryProvider="true"
+			/>
+
+		<SeekBarPreference
+			app:key="@string/pref_cat_seek__FREEZEkey"
+			app:title="@string/pref_cat_seek__title"
+			android:defaultValue="@integer/pref_cat_seek__default"
+			android:max="@integer/pref_cat_seek__max"
+			app:min="@integer/pref_cat_seek__min"
+			app:showSeekBarValue="true"
+			/>
+
+		<SwitchPreference
+			android:key="@string/pref_cat_switch__FREEZEkey"
+			android:title="@string/pref_cat_switch__title"
+			android:defaultValue="true"
+			app:summaryOff="@string/pref_cat_switch__sum_off"
+			app:summaryOn="@string/pref_cat_switch__sum_on"
+			/>
+
+		<CheckBoxPreference
+			app:key="@string/pref_cat_check__FREEZEkey"
+			app:title="@string/pref_cat_check__title"
+			app:summary="@string/pref_cat_check__sum"
+			app:summaryOff="@string/pref_cat_check__sum_off"
+			app:summaryOn="@string/pref_cat_check__sum_on"
+			app:defaultValue="true"
+			/>
+
+	</PreferenceCategory>
+
+
+</PreferenceScreen>
